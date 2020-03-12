@@ -72,17 +72,15 @@
                                                         <td>'.$data ['kategori'].'</td>
                                                         <td>'.$data ['tarif_bangsal'].'</td>
                                                         <td>'.$data ['tarif_operasi'].'</td>
-                                                       
+                                                 
+                                                
                                                 <td>
-                                                    <a href="#"><i class="fas fa-edit"></i></a>
+                                                 
+                                                    <a href="edit_dokter.php?id_dokter='.$data['id_dokter'].'"><i class="fas fa-edit"></i></a>
                                                     <a href="#" class="tbl_eraser"><i class="fas fa-eraser"></i></a>
                                                 </td>
                                                     </tr>
-                                                    
-                                                    
-                                                    
-                
-                                                    ';
+                                                    ';//line 79 mengedit tombol "edit"
                                                     $no++;// nomer ditambah satu otomatis
 
                                                 }
