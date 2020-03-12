@@ -1,0 +1,21 @@
+#zero_config_filter {
+    padding-left: 350px;
+}
+
+.tbl_print {
+    padding-left: 25%;
+}
+
+.tbl_eraser {
+    margin-left: 15px;
+}
+
+.sidebar-nav #sidebarnav .sidebar-item.selected>.sidebar-link {
+    border-radius: 0 60px 60px 0;
+    color:
+        #fff !important;
+    background: linear-gradient(to right,
+            #62afc2,#55afc5, #37aac7,
+            #17a2c5);
+    box-shadow: 0 7px 12px 0 rgba(95, 118, 232, .21);
+    opacity: 1;
