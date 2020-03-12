@@ -48,7 +48,8 @@
                                     <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
+                                                <th>no</th>
+                                                <th>kode dokter</th>
                                                 <th>Nama</th>
                                                 <th>Kategori</th>
                                                 <th>Tarif Bangsal</th>
@@ -66,10 +67,11 @@
                                                     echo '
                                                     <tr>
                                                         <td>'.$no.'</td>
+                                                        <td>'.$data ['kode_dokter'].'</td>
                                                         <td>'.$data ['nama'].'</td>
-                                                        <td>'.$data ['Kategori'].'</td>
-                                                        <td>'.$data ['Tarif Bangsal'].'</td>
-                                                        <td>'.$data ['Tarif Operasi'].'</td>
+                                                        <td>'.$data ['kategori'].'</td>
+                                                        <td>'.$data ['tarif_bangsal'].'</td>
+                                                        <td>'.$data ['tarif_operasi'].'</td>
                                                        
                                                 <td>
                                                     <a href="#"><i class="fas fa-edit"></i></a>

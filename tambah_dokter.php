@@ -47,23 +47,28 @@
                                             <label for="">Nama Dokter</label>
                                             <input type="text" class="form-control" name="nama" id="nama">
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="">kode Dokter</label>
+                                            <input type="text" class="form-control" name="kode_dokter" id="kode">
+                                        </div>
                                         
                                         <div class="form-group">
-                                            <label for="">Jenis Kelamin</label>
-                                            <select name="jk" id="jk" class="form-control">
-                                                <option value="L">Laki-Laki</option>
-                                                <option value="P">Perempuan</option>
+                                            <label for="">kategori</label>
+                                            <select name="kategori" id="jk" class="form-control">
+                                                <option value="u">umum</option>
+                                                <option value="s">spesialis</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="">Telepon</label>
-                                            <input type="text" class="form-control" name="telepon" id="telepon">
+                                            <label for="">tarif bangsal</label>
+                                            <input type="text" class="form-control" name="tarif_bangsal" id="tarif">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="">Biaya Jasa</label>
-                                            <input type="text" class="form-control" name="jasa" id="jasa">
+                                            <label for="">tarif operasi</label>
+                                            <input type="text" class="form-control" name="tarif_operasi" id="tarif">
                                         </div>
 
                                         <!-- Identitas form -->
