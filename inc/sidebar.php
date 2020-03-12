@@ -14,8 +14,9 @@
                         <li class="nav-small-cap"><span class="hide-menu">Komponen Data</span></li>
                         
                         <!-- Sub Data Dokter -->
+                        <!-- ubah icon = ubah "..." class data-feather -->
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                                aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
+                                aria-expanded="false"><i data-feather="book-open" class="feather-icon"></i><span
                                     class="hide-menu">DOKTER</span></a>
                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
                                 <li class="sidebar-item"><a href="data_dokter.php" class="sidebar-link"><span
