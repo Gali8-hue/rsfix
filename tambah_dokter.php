@@ -56,8 +56,8 @@
                                         <div class="form-group">
                                             <label for="">kategori</label>
                                             <select name="kategori" id="jk" class="form-control">
-                                                <option value="u">umum</option>
-                                                <option value="s">spesialis</option>
+                                                <option value="umum">umum</option>
+                                                <option value="spesialis">spesialis</option>
                                             </select>
                                         </div>
 
