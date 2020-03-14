@@ -40,47 +40,54 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title text-center">Data Ruangan</h2>
+                                <h2 class="card-title text-center">Data Dokter <a href="" class="tbl_print"><i class="fas fa-print"></i></a></h2>
+                                <div class="tbl_print">
+                                   
+                                </div>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
+                                                <th>no</th>
+                                                <th>kode dokter</th>
                                                 <th>Nama</th>
-                                                <th>Harga</th>                                             
-                                                <th>Aksi</th>                                             
+                                                <th>Kategori</th>
+                                                <th>Tarif Bangsal</th>
+                                                <th>Tarif Operasi</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-
-                                                $query = "select * from ruangan";
-                                                $hasil = mysqli_query($koneksi, $query);
-                                                $no =1;
-
-                                                while ($data = mysqli_fetch_array($hasil)) {
+                                                $query = "select * from dokter";
+                                                $hasil = mysqli_query($koneksi,$query);
+                                                $no =1; 
+                                                
+                                                while($data = mysqli_fetch_array($hasil)) {
                                                     echo '
-                                                    
                                                     <tr>
-                                                    <td>'.$no.'</td>
-                                                   
-                                                    <td>'.$data ['nama_ruangan'].'</td>
-                                                    <td>'.$data ['harga'].'</td>
+                                                        <td>'.$no.'</td>
+                                                        <td>'.$data ['kode_dokter'].'</td>
+                                                        <td>'.$data ['nama'].'</td>
+                                                        <td>'.$data ['kategori'].'</td>
+                                                        <td>'.$data ['tarif_bangsal'].'</td>
+                                                        <td>'.$data ['tarif_operasi'].'</td>
+                                                 
+                                                
                                                 <td>
-                                                    <a href="#"><i class="fas fa-edit"></i></a>
-                                                    <a href="#" class="tbl_eraser"><i class="fas fa-eraser"></i></a>
+                                                 
+                                                    <a href="edit_dokter.php?id_dokter='.$data['id_dokter'].'"><i class="fas fa-edit"></i></a>
+                                                    
+                                                    <a href="hapus.php?id_dokter='. $data['id_dokter'].'&jenis=hapus_dokter"><i class="fas fa-eraser"></i></a>
                                                 </td>
                                                     </tr>
- 
-                                                    ';
-                                                    $no++;
+                                                    ';//line 79 mengedit tombol "edit"
+                                                    $no++;// nomer ditambah satu otomatis
+
                                                 }
-                                            
-                                            
                                             ?>
-                                            
-
-
+                                          
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -88,7 +95,7 @@
                     </div>
                 </div>
             
-            
+    
         
                 <!-- END ISI KONTEN 1 -->
         </div>

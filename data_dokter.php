@@ -76,8 +76,9 @@
                                                 
                                                 <td>
                                                  
-                                                    <a href="edit_dokter.php?id_dokter='.$data['id_dokter'].'"><i class="fas fa-edit"></i></a>
-                                                    <a href="#" class="tbl_eraser"><i class="fas fa-eraser"></i></a>
+                                                    <a href="edit_dokter.php?id_dokter='.$data['id_dokter'].'"><i class="fas fa-edit" data-toggle="tooltip" title="Edit"></i></a>
+                                                    
+                                                    <a href="hapus.php?id_dokter='. $data['id_dokter'].'&jenis=hapus_dokter"><i class="fas fa-eraser" data-toggle="tooltip" title="Hapus"></i></a>
                                                 </td>
                                                     </tr>
                                                     ';//line 79 mengedit tombol "edit"
@@ -94,7 +95,7 @@
                     </div>
                 </div>
             
-            
+    
         
                 <!-- END ISI KONTEN 1 -->
         </div>
