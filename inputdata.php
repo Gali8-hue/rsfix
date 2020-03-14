@@ -151,10 +151,6 @@
             </div>
         </div>
 
-          <!-- Rp -->
-             <div class="col mt-4  mr-3">
-                   <input type="text" class="form-control mb-2 mr-sm-2" id="cost" placeholder="Rp" name="cost"> 
-            </div>
 
 <!---------------------------------2.Visite Dokter/ Konsultasi-------------------------------------------- -->
  

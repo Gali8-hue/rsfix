@@ -19,3 +19,30 @@
             #17a2c5);
     box-shadow: 0 7px 12px 0 rgba(95, 118, 232, .21);
     opacity: 1;
+}
+
+path {
+    color: rgb(19, 112, 124);
+}
+
+rect {
+
+    color: rgb(19, 112, 124);
+}
+
+line {
+    color: rgb(19, 112, 124);
+}
+
+polyline {
+    color: rgb(19, 112, 124);
+}
+
+circle {
+    color: rgb(19, 112, 124);
+}
+
+.badge-primary {
+    color: #fff;
+    background-color: red;
+}
