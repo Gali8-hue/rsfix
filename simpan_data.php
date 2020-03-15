@@ -1,4 +1,4 @@
-<?php 
+<?php ////////////////////////////////////////////DOKTER/////////////////////////////////////////////////////////////
     include 'inc/koneksi.php';
 
     $jenis = $_POST['jenis'];
@@ -67,6 +67,44 @@
 
     //
   
+
+
+?>
+
+<?php  ///////////////////////////////////////////////PARAMEDIS(Ruangan/Bangsal)/////////////////////////////////////////
+    include 'inc/koneksi.php';
+
+    $jenis = $_POST['jenis'];
+
+    //perintah 
+
+    if ($jenis == 'input_ruangan') {
+ 
+     
+     $nama = $_POST['nama_ruang'];
+     
+
+    $query = "INSERT INTO paramedis (nama) VALUES ('$nama_ruang')";
+    $hasil = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
+
+    if ($hasil) {
+        echo "<script>
+                alert ('data berhasil diupdate!');
+                document.location.href = 'data_ruangan.php';
+                </script>";
+    }else {
+        echo "<script>
+                 alert ('data gagal ditambahkan!');
+                
+             </script>";
+
+    }
+
+}
+
+
+
+
 
 
 ?>

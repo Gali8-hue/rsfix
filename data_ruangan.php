@@ -40,26 +40,21 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title text-center">Data Dokter <a href="" class="tbl_print"><i class="fas fa-print"></i></a></h2>
-                                <div class="tbl_print">
-                                   
-                                </div>
+                                <h2 class="card-title text-center">Data Paramedis</h2>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                         <thead>
-                                            <tr>
+                                        <tr>
                                                 <th>no</th>
-                                                <th>kode dokter</th>
+                                                
                                                 <th>Nama</th>
-                                                <th>Kategori</th>
-                                                <th>Tarif Bangsal</th>
-                                                <th>Tarif Operasi</th>
+                                               
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $query = "select * from dokter";
+                                                $query = "select * from paramedis";
                                                 $hasil = mysqli_query($koneksi,$query);
                                                 $no =1; 
                                                 
@@ -67,18 +62,16 @@
                                                     echo '
                                                     <tr>
                                                         <td>'.$no.'</td>
-                                                        <td>'.$data ['kode_dokter'].'</td>
+                                                       
                                                         <td>'.$data ['nama'].'</td>
-                                                        <td>'.$data ['kategori'].'</td>
-                                                        <td>'.$data ['tarif_bangsal'].'</td>
-                                                        <td>'.$data ['tarif_operasi'].'</td>
+                                                        
                                                  
                                                 
                                                 <td>
                                                  
-                                                    <a href="edit_dokter.php?id_dokter='.$data['id_dokter'].'"><i class="fas fa-edit"></i></a>
+                                                    <a href="edit_dokter.php?id_dokter='.$data['id_dokter'].'"><i class="fas fa-edit" data-toggle="tooltip" title="Edit"></i></a>
                                                     
-                                                    <a href="hapus.php?id_dokter='. $data['id_dokter'].'&jenis=hapus_dokter"><i class="fas fa-eraser"></i></a>
+                                                    <a href="hapus.php?id_dokter='. $data['id_dokter'].'&jenis=hapus_dokter"><i class="fas fa-eraser" data-toggle="tooltip" title="Hapus"></i></a>
                                                 </td>
                                                     </tr>
                                                     ';//line 79 mengedit tombol "edit"
@@ -87,6 +80,8 @@
                                                 }
                                             ?>
                                           
+                                        <tbody>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -95,7 +90,7 @@
                     </div>
                 </div>
             
-    
+            
         
                 <!-- END ISI KONTEN 1 -->
         </div>

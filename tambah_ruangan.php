@@ -40,7 +40,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title text-center">Tambah Data Ruangan</h2>
+                                <h2 class="card-title text-center">Tambah Data Paramedis</h2>
                                     <form action="simpan_data.php" method="post">
 
                                         <div class="form-group">
@@ -49,11 +49,7 @@
                                         </div>
                                         
                                         
-                                        <div class="form-group">
-                                            <label for="">Harga</label>
-                                            <input type="text" class="form-control" name="harga" id="harga">
-                                        </div>
-
+                                        
                                         <!-- Identitas form -->
                                         <input type="hidden" value="input_ruangan" name="jenis">
 
