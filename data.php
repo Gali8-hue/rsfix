@@ -49,21 +49,27 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title text-center">Data Ruangan</h2>
+                                <h2 class="card-title text-center">Data</h2>
                                 <div class="table-responsive">
-                                    <!-- <table id="zero_config" class="table table-striped table-bordered no-wrap">
+                                    <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>Nama</th>
-                                                <th>Harga</th>                                             
-                                                <th>Aksi</th>                                             
+                                                
+                                                <th>Nama*</th>
+                                                <th>No Reg*</th>                                             
+                                                <th>Lama Opname*</th>                                             
+                                                <th>Hari*</th>                                             
+                                                <th>Ruang*</th>
+                                                <th>Nama Dokter</th>                                             
+                                                <th>Jumlah Dokter</th>                                             
+                                                <th>Nama PM</th>                                             
+                                                <th>Jumlah PMr</th>                                             
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
 
-                                                $query = "select * from ruangan";
+                                                $query = "select * from data";
                                                 $hasil = mysqli_query($koneksi, $query);
                                                 $no =1;
 
@@ -73,8 +79,15 @@
                                                     <tr>
                                                     <td>'.$no.'</td>
                                                    
-                                                    <td>'.$data ['nama_ruangan'].'</td>
-                                                    <td>'.$data ['harga'].'</td>
+                                                    <td>'.$data ['nama'].'</td>
+                                                    <td>'.$data ['noreg'].'</td>
+                                                    <td>'.$data ['lamaopname'].'</td>
+                                                    <td>'.$data ['hari'].'</td>
+                                                    <td>'.$data ['ruang'].'</td>
+                                                    <td>'.$data ['nama_dokter'].'</td>
+                                                    <td>'.$data ['jumlah_dokter'].'</td>
+                                                    <td>'.$data ['nama_pm'].'</td>
+                                                    <td>'.$data ['jumlah_pm'].'</td>
                                                 <td>
                                                     <a href="#"><i class="fas fa-edit"></i></a>
                                                     <a href="#" class="tbl_eraser"><i class="fas fa-eraser"></i></a>
@@ -90,7 +103,7 @@
                                             
 
 
-                                    </table> -->
+                                    </table>
                                 </div>
                             </div>
                         </div>
