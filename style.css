@@ -46,3 +46,16 @@ circle {
     color: #fff;
     background-color: red;
 }
+.tbl_print {
+    padding-left: 10%;
+}
+.fas.fa-print {
+    color: #1c2d41;
+}
+.fas.fa-download {
+    color: #1c2d41;
+}
+.tbl_print {
+    padding-left: 3%;
+    margin-left: 5%;
+}

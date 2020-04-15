@@ -80,31 +80,47 @@
 
     if ($jenis == 'input_ruangan') {
  
-     
-     $nama = $_POST['nama_ruang'];
+         $nama = $_POST['nama_ruangan'];
      
 
-    $query = "INSERT INTO paramedis (nama) VALUES ('$nama_ruang')";
-    $hasil = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
+        $query = "INSERT INTO paramedis (nama_ruang) VALUES ( '$nama')";
+        $hasil = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 
-    if ($hasil) {
-        echo "<script>
+         if ($hasil) {
+            echo "<script>
                 alert ('data berhasil diupdate!');
                 document.location.href = 'data_ruangan.php';
                 </script>";
-    }else {
-        echo "<script>
+         }else {
+             echo "<script>
                  alert ('data gagal ditambahkan!');
                 
-             </script>";
+                </script>";
+         }     
 
-    }
+    }elseif ($jenis == 'edit_ruangan'){
 
-}
+         $nomor = $_POST['nomor'];
+         $nama_ruang = $_POST['nama_ruangan'];
+       
 
+         //update table dokter yg sdh di tambah id
+         $query = "update paramedis set nama_ruang='$nama_ruang' where nomor=$nomor";
 
+         $update = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 
+         if ($update) {
+            echo "<script>
+                    alert ('data berhasil diupdate!');
+                    document.location.href = 'data_ruangan.php';
+                    </script>";
+        }else {
+            echo "<script>
+                     alert ('data gagal ditambahkan!');
+                    
+                 </script>";
 
-
-
+        }
+     }
+    
 ?>

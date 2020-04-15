@@ -1,3 +1,5 @@
+
+
 <?php require_once('inc/header.php'); ?>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -35,23 +37,33 @@
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
 
+            <?php
+            $id = $_GET [ 'id_ruangan'];
+            $query = "SELECT * from paramedis where nomor=$id";
+            $hasil = mysqli_query($koneksi, $query);
+            $data = mysqli_fetch_assoc($hasil);//ubah hasil ke array assosiatif
+
+            
+
+            ?>
+
             <!-- ISI KONTEN 1 -->
             <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title text-center">Tambah Data Ruangan</h2>
+                                <h2 class="card-title text-center">Edit Data Ruangan</h2>
                                     <form action="simpan_data.php" method="post">
 
-                                        <div class="form-group">
+                                    <div class="form-group">
                                             <label for="">Nama Ruangan</label>
-                                            <input type="text" class="form-control" name="nama_ruangan" id="nama_ruangan">
+                                            <input type="text" class="form-control" name="nama_ruangan" id="nama_ruangan" value="<?=$data["nama_ruang"]?>">
                                         </div>
-                                        
-                                        
-                                        
+
                                         <!-- Identitas form -->
-                                        <input type="hidden" value="input_ruangan" name="jenis">
+                            <input type="hidden" value="edit_ruangan" name="jenis">
+            <input type="hidden" value="<?php echo $data['nomor'] ?>" name="nomor">
+            <!--  -->
 
                                         <button type="submit" class="btn waves-effect waves-light btn-rounded btn-primary">Simpan</button>
                                     

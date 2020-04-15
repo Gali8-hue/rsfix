@@ -40,8 +40,18 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title text-center">Data Dokter <a href="" class="tbl_print"><i class="fas fa-print"></i></a></h2>
-                                <div class="tbl_print">
+                                <div class="row justify justify-content-end">
+                                    <div class="col-sm-3">
+                                      <h2>Data Dokter</h2>
+                                    </div> 
+
+                                    <div class="col-sm-5 mt-2 ">
+                                        <a href="" class="tbl_print"><i class="fas fa-print" data-toggle="tooltip" title="print"></i></a>
+                                        <a href="" class="tbl_print"><i class="fas fa-download" data-toggle="tooltip" title="download"></i></a>
+                                       
+                                    </div>  
+                                </div>
+                                
                                    
                                 </div>
                                 <div class="table-responsive">

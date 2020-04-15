@@ -1,8 +1,10 @@
+<!--------------------------------- Tombol Hapus Dokter ------------------------------->
 <?php
     include 'inc/koneksi.php';
    $jenis = $_GET['jenis'];
 
-   if ($jenis = 'hapus_dokter') {
+
+   if ($jenis == 'hapus_dokter') {
 
         $id_dokter = $_GET['id_dokter'];
         $query = "delete from dokter where id_dokter=$id_dokter";
@@ -21,6 +23,26 @@
                  </script>";
 
         }
-   }
+   }elseif ($jenis == 'hapus_ruangan') {
+
+    $id_ruangan = $_GET['id_ruangan'];
+    $query = "delete from paramedis where nomor=$id_ruangan";
+    $hapus = mysqli_query ($koneksi, $query) or die (mysqli_error($koneksi));
+
+
+    if ($hapus) {
+        echo "<script>
+                alert ('data berhasil dihapus!');
+                document.location.href = 'data_ruangan.php';
+                </script>";
+    }else {
+        echo "<script>
+                 alert ('data gagal dihapus!');
+                
+             </script>";
+
+    }
+}
 
 ?>
+<!--------------------------------Tombol Hapus Ruangan------------------------------------->

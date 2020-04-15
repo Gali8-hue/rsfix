@@ -45,10 +45,12 @@
                                     <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                         <thead>
                                         <tr>
-                                                <th>no</th>
+                                             
                                                 
-                                                <th>Nama</th>
+                                                <th>No.Ruang</th>
                                                
+                                                <th>nama ruang</th>
+
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -61,17 +63,18 @@
                                                 while($data = mysqli_fetch_array($hasil)) {
                                                     echo '
                                                     <tr>
-                                                        <td>'.$no.'</td>
                                                        
-                                                        <td>'.$data ['nama'].'</td>
+                                                       
+                                                        <td>'.$data ['nomor'].'</td>
+                                                        <td>'.$data ['nama_ruang'].'</td>
                                                         
                                                  
                                                 
                                                 <td>
                                                  
-                                                    <a href="edit_dokter.php?id_dokter='.$data['id_dokter'].'"><i class="fas fa-edit" data-toggle="tooltip" title="Edit"></i></a>
+                                                    <a href="edit_ruangan.php?id_ruangan='.$data['nomor'].'"><i class="fas fa-edit" data-toggle="tooltip" title="Edit"></i></a>
                                                     
-                                                    <a href="hapus.php?id_dokter='. $data['id_dokter'].'&jenis=hapus_dokter"><i class="fas fa-eraser" data-toggle="tooltip" title="Hapus"></i></a>
+                                                    <a href="hapus.php?id_ruangan='. $data['nomor'].'&jenis=hapus_ruangan"><i class="fas fa-eraser" data-toggle="tooltip" title="Hapus"></i></a>
                                                 </td>
                                                     </tr>
                                                     ';//line 79 mengedit tombol "edit"

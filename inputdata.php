@@ -49,7 +49,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title text-center">Data Ruangan</h2>
+                                <h2 class="card-title text-center">Input Ruangan</h2>
                                 <div class="table-responsive">
                                     <!-- <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                         <thead>

@@ -55,25 +55,29 @@
                                         <thead>
                                             <tr>
                                                 
+                                                <th>No</th>
                                                 <th>Nama*</th>
                                                 <th>No Reg*</th>                                             
                                                 <th>Lama Opname*</th>                                             
-                                                <th>Hari*</th>                                             
+                                                <th>Tgl Keluar*</th>                                             
                                                 <th>Ruang*</th>
-                                                <th>Nama Dokter</th>                                             
-                                                <th>Jumlah Dokter</th>                                             
+                                                <th>Nama Dokter</th>                                                                                                                      
                                                 <th>Nama PM</th>                                             
-                                                <th>Jumlah PMr</th>                                             
+                                                <th>Aksi</th>                                             
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
 
-                                                $query = "select * from data";
+                                                $query = "select * from data_pasien";
                                                 $hasil = mysqli_query($koneksi, $query);
                                                 $no =1;
 
                                                 while ($data = mysqli_fetch_array($hasil)) {
+                                                    $tgl_k=$data['tanggal_keluar'];
+                                                    $tglK=explode('-',$tgl_k);
+                                                    $tgl_keluar=$tglK[2].'-'.$tglK[1].'-'.$tglK[0];
+                                                    
                                                     echo '
                                                     
                                                     <tr>
@@ -81,13 +85,13 @@
                                                    
                                                     <td>'.$data ['nama'].'</td>
                                                     <td>'.$data ['noreg'].'</td>
-                                                    <td>'.$data ['lamaopname'].'</td>
-                                                    <td>'.$data ['hari'].'</td>
-                                                    <td>'.$data ['ruang'].'</td>
+                                                    <td>10</td>
+                                                    <td>'.$tgl_keluar.'</td>
+                                                    <td>'.$data ['ruangan'].'</td>
                                                     <td>'.$data ['nama_dokter'].'</td>
-                                                    <td>'.$data ['jumlah_dokter'].'</td>
+                                                    
                                                     <td>'.$data ['nama_pm'].'</td>
-                                                    <td>'.$data ['jumlah_pm'].'</td>
+                                                    
                                                 <td>
                                                     <a href="#"><i class="fas fa-edit"></i></a>
                                                     <a href="#" class="tbl_eraser"><i class="fas fa-eraser"></i></a>
