@@ -30,8 +30,9 @@
                             </ul>
                         </li>
                         
+                        <!-- Sub Ruangan/Paramedis -->
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                                aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                                aria-expanded="false"><i data-feather="file" class="feather-icon"></i><span
                                     class="hide-menu">PARAMEDIS </span></a>
                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
                                 <li class="sidebar-item"><a href="data_ruangan.php" class="sidebar-link"><span
@@ -45,23 +46,25 @@
                             </ul>
                         </li>
 
+                        <!-- Data Pasien -->
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                                aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                                    class="hide-menu">DATA PASIEN </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item"><a href="data.php" class="sidebar-link"><span
+                                            class="hide-menu"> Data Pasien
+                                        </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="inputdata.php" class="sidebar-link"><span
+                                            class="hide-menu"> Tambah Data Pasien
+                                        </span></a>
+                                </li>
+                            </ul>
+                        </li>
+
                        
 
-                          <!-- Rawat Inap = BUAT FORM -->
-                          <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="inputdata.php"
-                                aria-expanded="false"><i data-feather="sidebar" class="feather-icon"></i><span
-                                    class="hide-menu">INPUT DATA
-                                </span></a>
-                        </li>
-
-                        <!-- PERTELAAN = BUAT TABLE -->
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="data.php"
-                                aria-expanded="false"><i data-feather="sidebar" class="feather-icon"></i><span
-                                    class="hide-menu">DATA
-                                </span></a>
-                        </li>
-
-
+                      
                         
                        
                         
