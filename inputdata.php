@@ -52,47 +52,14 @@
                                 <h2 class="card-title text-center">Input Ruangan</h2>
                                 
                                 <div class="table-responsive">
-                                    <!-- <table id="zero_config" class="table table-striped table-bordered no-wrap">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Nama</th>
-                                                <th>Harga</th>                                             
-                                                <th>Aksi</th>                                             
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-
-                                                $query = "select * from ruangan";
-                                                $hasil = mysqli_query($koneksi, $query);
-                                                $no =1;
-
-                                                while ($data = mysqli_fetch_array($hasil)) {
-                                                    echo '
-                                                    
-                                                    <tr>
-                                                    <td>'.$no.'</td>
-                                                   
-                                                    <td>'.$data ['nama_ruangan'].'</td>
-                                                    <td>'.$data ['harga'].'</td>
-                                                <td>
-                                                    <a href="#"><i class="fas fa-edit"></i></a>
-                                                    <a href="#" class="tbl_eraser"><i class="fas fa-eraser"></i></a>
-                                                </td>
-                                                    </tr>
- 
-                                                    ';
-                                                    $no++;
-                                                }
-                                            
-                                            
-                                            ?>
+                                
                                             
 
 
                                     <div class="container-form">
-    <form action="/rawatinap.php">
+    <form action="simpan_data.php" method="POST">
+    <input type="hidden" name="jenis" value="tambah_pasien">
+
     <!---------------------------------------1.Hari Perawatan-------------------------------------------- -->
 
     <p class="ml-3 " ><b>1. Hari Perawatan</b></p>
@@ -102,9 +69,9 @@
                 <label for="Nama">Nama</label>
                  <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap" name="nama"> 
                  <div class="checkbox ml-3">
-                    <input type="radio" id="male" name="gender" value="male">
+                    <input type="radio" id="male" name="gender" value="L">
                     <label for="female">Laki-laki</label>  
-                    <input type="radio" id="female" name="gender" value="female">
+                    <input type="radio" id="female" name="gender" value="P">
                     <label for="female">Perempuan</label>
                        
                  </div>
@@ -112,7 +79,7 @@
             </div>
             <div class="col mt-sm-1 mr-4 ">
                 <label for="Nama"><No class="registrasi"></No>No.Registrasi</label>
-                <input type="text" class="form-control" id="nomor-reg" placeholder="Nomor" name="nomor-reg">
+                <input type="text" class="form-control" id="nomor_reg" placeholder="Nomor" name="nomor_reg">
             </div>
         </div> 
           
@@ -120,9 +87,9 @@
             <!-- tanggal & Ruangan -->
             <div class="col-6 ml-2 ">
                 <div class="col mt-4">
-                    <label for="date" class=" mb-2 mr-sm-2">Tanggal </label>
-                    <input type="date" class="form-control mb-2 mr-sm-2" id="tanggal" placeholder="tgl masuk" name="nomor-reg"> 
-                    <input type="text" class="form-control" id="tanggal" placeholder="tgl keluar" name="nomor-reg"> 
+                    <label for="date" class=" mb-2 mr-sm-2">Tanggal Masuk-Keluar </label>
+                    <input type="date" class="form-control mb-2 mr-sm-2" id="tanggal" placeholder="tgl masuk" name="tgl_masuk"> 
+                    <input type="date" class="form-control" id="tanggal" placeholder="tgl keluar" name="tgl_keluar"> 
                 </div>
                 <div class="col">
                 </div>
@@ -131,23 +98,26 @@
             <div class="col mt-4 mr-4 ">
                 <label for="room">Ruangan</label>
                     <select name="ruangan" id="" class="custom-select mb-3">
-                        <option value="pilih ruang">Anggrek</option>
-                        <option value="pilih ruang">Mawar</option>
-                        <option value="pilih ruang">Melati</option>
-                        <option value="pilih ruang">cempaka</option>
-                        <option value="pilih ruang">Tulip</option>
-                        <option value="pilih ruang">Nusa Indah</option>
-                        <option value="pilih ruang">Edelwis</option>
-                        <option value="pilih ruang">Kenanga</option>
-                        <option value="pilih ruang">Teratai</option>
+                        <option value="pilih ruang">Pilih Ruangan</option>
+                        <?php
+                        $query = "select * from paramedis";
+                        $hasil2 = mysqli_query($koneksi, $query);
+                         while ($data2 = mysqli_fetch_array($hasil2)){
+                             ?>
+
+                             <option value="<?php echo $data2['nomor'] ?>"><?=$data2['nama_ruang'] ?></option>
+                         <?php } ?>
+                       
+                     <!-- mengkoneksikan row ruangan di INPUTDATA.php ke Database -->
+                      
                      </select>
 
-                     <select name="ruangan" id="" class="custom-select mb-3">
-                        <option value="pilih ruang">VVIP</option>
-                        <option value="pilih ruang">VIP</option>
-                        <option value="pilih ruang">I</option>
-                        <option value="pilih ruang">II</option>
-                        <option value="pilih ruang">III</option>                        
+                     <select name="kelas" id="" class="custom-select mb-3">
+                        <option value="VVIP">VVIP</option>
+                        <option value="VIP">VIP</option>
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>                        
                      </select>
             </div>
         </div>
@@ -158,18 +128,71 @@
             <p class="ml-3 mt-5 "><b>2. Visite Dokter/ Konsultasi</b></p>
         <div class="row" > 
             <div class="col mt-sm-1 ml-4">
-                 <input type="text" class="form-control" id="nama" placeholder="Dr" name="nama">   
+                <select  id="" class="custom-select mb-3" name="dokter_1">
+                        <option value="">Pilih Dokter</option>
+                        <?php 
+                             $query = "select * from dokter";
+                             $hasil3 = mysqli_query($koneksi, $query);
+                            while ($data3 = mysqli_fetch_array($hasil3)){
+                                ?>
+
+                            <option value="<?php echo $data3['id_dokter'] ?>"><?=$data3['nama'] ?></option>
+                         <?php } ?>
+
+                </select>  
             </div>
 
-            <div class="col mt-sm-1 mr-4 ">
-                <input type="text" class="form-control" id="nomor-reg" placeholder="Dr" name="nomor-reg">
-            </div>
             <div class="col mt-sm-1 ml-4">
-                 <input type="text" class="form-control" id="nama" placeholder="Dr" name="nama">   
+                <select  id="" class="custom-select mb-3" name="dokter_2">
+                        <option value="">Pilih Dokter</option>
+                        <?php 
+                             $query = "select * from dokter";
+                             $hasil3 = mysqli_query($koneksi, $query);
+                            while ($data3 = mysqli_fetch_array($hasil3)){
+                                ?>
+
+                            <option value="<?php echo $data3['id_dokter'] ?>"><?=$data3['nama'] ?></option>
+                         <?php } ?>
+
+                </select>  
             </div>
 
-            <div class="col mt-sm-1 mr-4 ">
-                <input type="text" class="form-control" id="nomor-reg" placeholder="Dr" name="nomor-reg">
+<!-- cara efisien col.3-4 -->
+<?php 
+    $query = "select * from dokter";
+    $hasil3 = mysqli_query($koneksi, $query);
+    $dokter ="";
+
+    while ($data3 = mysqli_fetch_array($hasil3)){
+        $dokter= $dokter.'<option value="'.$data3["id_dokter"].'">'.$data3["nama"].'</option>';
+    }
+
+ ?>
+
+             <div class="col mt-sm-1 ml-4">
+                <select  id="" class="custom-select mb-3" name="dokter_3">
+                <option value="">Pilih Dokter</option>     
+                <?=$dokter ?>
+                </select>  
+            </div>
+
+
+            <?php 
+    $query = "select * from dokter";
+    $hasil3 = mysqli_query($koneksi, $query);
+    $dokter ="";
+
+    while ($data3 = mysqli_fetch_array($hasil3)){
+            $dokter= $dokter.'<option value="'.$data3["id_dokter"].'">'.$data3["nama"].'</option>';
+    }
+
+ ?>
+            <div class="col mt-sm-1 ml-4">
+                <select  id="" class="custom-select mb-3" name="dokter_4">
+                        <option value="">Pilih Dokter</option>
+                        <?=$dokter?>
+                       
+                </select>  
             </div>
         </div> 
         
@@ -180,35 +203,68 @@
             <div class="row" >
                 <div class="col">
                     <label for="dokteroperator" class="ml-3 mt-1">Dokter Operator</label>              
-                    <input type="text" class="form-control mb-2 mr-sm-2 ml-3" id="dokteroperator" placeholder="Dr" name="dokteroperator">
+                    <select  id="" class="custom-select mb-3" name="dokteroperator_1">
+                        <option value="">Pilih Dokter</option>
+                        <?=$dokter?>
+                       
+                </select>  
                 </div>  
                 <div class="col mr-3">
                     <label for="dokteroperator" class="ml-2 mt-1">Dokter Operator </label>              
-                    <input type="text" class="form-control mb-2 mr-sm-2 " id="dokteroperator" placeholder="Dr" name="dokteroperator">
+                    <select  id="" class="custom-select mb-3" name="dokteroperator_2">
+                        <option value="">Pilih Dokter</option>
+                        <?=$dokter?>
+                       
+                </select>  
                 </div>  
             </div>
             <!-- dokter anastesi & anak -->
             <div class="row" >
                 <div class="col">
                     <label for="dokteroperator" class="ml-3 mt-1">Dokter Anastesi</label>              
-                    <input type="text" class="form-control mb-2 mr-sm-2 ml-3" id="dokteranastesi" placeholder="Dr" name="dokteroperator">
+                    <select  id="" class="custom-select mb-3" name="dokteranastesi">
+                        <option value="">Pilih Dokter</option>
+                        <?=$dokter?>
+                       
+                </select>  
                 </div>  
                 <div class="col mr-3">
                     <label for="dokteroperator" class="ml-2 mt-1">Dokter Anak</label>              
-                    <input type="text" class="form-control mb-2 mr-sm-2 " id="dokteranak" placeholder="Dr" name="dokteroperator">
+                    <select  id="" class="custom-select mb-3" name="dokteranak">
+                        <option value="">Pilih Dokter</option>
+                        <?=$dokter?>
+                       
+                </select>  
                 </div>  
             </div>
             <!-- Asisten operator -->
             <div class="row" >
                 <div class="col">
                     <label for="dokteroperator" class="ml-3 mt-1">Asisten Operator </label>              
-                    <input type="text" class="form-control mb-2 mr-sm-2 ml-3" id="dokter" placeholder="Dr" name="dokter">
+                    <select  id="" class="custom-select mb-3" name="asistenoperator">
+                        <option value="">Pilih Dokter</option>
+                        <?=$dokter?>
+                       
+                </select>  
                 </div>  
+
                 <div class="col mr-3" >
-                    <!-- <label for="dokteroperator" class="ml-2 mt-1">Dokter Anak</label>               -->
-                    <input type="text" class="form-control mb-2 mr-sm-2 " id="Perawat" placeholder="Perawat" name="Perawat">
+                <label for="dokteroperator" class="ml-3 mt-1">Perawat </label>              
+                <select  id="" class="custom-select mb-3" name="perawat">
+                        <option value="">Pilih </option>
+                        <?php
+                        $query = "select * from paramedis";
+                        $hasil2 = mysqli_query($koneksi, $query);
+                         while ($data2 = mysqli_fetch_array($hasil2)){
+                             ?>
+
+                             <option value="<?php echo $data2['nomor'] ?>"><?=$data2['nama_ruang'] ?></option>
+                         <?php } ?>
+                </select>   
                 </div>  
             </div>
+
+            <!-- tombol -->
             <div class="row ml-5">
                 <div class="col-sm-1">
                   <button type="submit" class="btn btn-primary mt-3"> kirim</button>

@@ -122,5 +122,45 @@
 
         }
      }
+     elseif ($jenis == 'tambah_pasien'){
+
+        $nama =$_POST['nama'];
+        $gender =$_POST['gender'];
+        $nomor_reg =$_POST['nomor_reg'];
+        $tgl_masuk =$_POST['tgl_masuk'];
+        $tgl_keluar =$_POST['tgl_keluar'];
+        $ruangan =$_POST['ruangan'];
+        $kelas =$_POST['kelas'];
+        $dokter_1 =$_POST['dokter_1'];
+        $dokter_2 =$_POST['dokter_2'];
+        $dokter_3 =$_POST['dokter_3'];
+        $dokter_4 =$_POST['dokter_4'];
+        $dokteroperator_1 =$_POST['dokteroperator_1'];
+        $dokteroperator_2 =$_POST['dokteroperator_2'];
+        $dokteranastesi =$_POST['dokteranastesi'];
+        $dokteranak =$_POST['dokteranak'];
+        $asistenoperator =$_POST['asistenoperator'];
+        $perawat =$_POST['perawat'];
+
+        $data_ruangan = $ruangan.'-'.$kelas;
+        $data_dokter = $dokter_1.'-'.$dokter_2.'-'.$dokter_3.'-'.$dokter_4.'-'.$dokteranak.'-'.$perawat;
+        $data_operator= $dokteroperator_1.'-'.$dokteroperator_2.'-'.$asistenoperator;
+
+        $query = "INSERT INTO data_pasien (nama, gender, noreg, tanggal_masuk, tanggal_keluar, ruangan, nama_dokter, operator)
+         VALUES ( '$nama','$gender','$nomor_reg','$tgl_masuk','$tgl_keluar','$data_ruangan','$data_dokter','$data_operator')";
+        $hasil = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
+
+        if ($hasil) {
+            echo "<script>
+                alert ('data berhasil ditambah!');
+                document.location.href = 'data.php';
+                </script>";
+         }else {
+             echo "<script>
+                 alert ('data gagal ditambahkan!');
+                
+                </script>";
+         }     
+     }
     
 ?>

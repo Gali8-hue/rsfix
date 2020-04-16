@@ -72,6 +72,7 @@
                                                 
                                                 <th>No</th>
                                                 <th>Nama*</th>
+                                                <th>Gender*</th>
                                                 <th>No Reg*</th>                                             
                                                 <th>Lama Opname*</th>                                             
                                                 <th>Tgl Keluar*</th>                                             
@@ -89,6 +90,30 @@
                                                 $no =1;
 
                                                 while ($data = mysqli_fetch_array($hasil)) {
+                                                    // cek nama dokter 
+                                                    $tampung_dokter = $data['nama_dokter'];
+                                                    $array_dokter = explode('-',$tampung_dokter);
+                                                    $nama_dokter ="";//menampung mama dokter
+
+                                                    for ($i=0; $i<4 ; $i++) {//iterasi untuk ambil visite dokter
+
+                                                        $id_dokter =$array_dokter[$i]; //id yg terpilih
+
+                                                        if ($id_dokter!='') {//jika id tidak kosong
+                                                        $query2 = "select * from dokter where id_dokter=$id_dokter";
+                                                        $hasil2 = mysqli_query($koneksi, $query);
+                                                        $hasil_dokter = mysqli_fetch_assoc($hasil2);
+
+                                                        }
+
+                                                    }
+
+                                                    $id_dokter =$array_dokter[0];
+
+                                                   
+
+
+
                                                     $tgl_k=$data['tanggal_keluar'];
                                                     $tglK=explode('-',$tgl_k);
                                                     $tgl_keluar=$tglK[2].'-'.$tglK[1].'-'.$tglK[0];
@@ -99,11 +124,12 @@
                                                     <td>'.$no.'</td>
                                                    
                                                     <td>'.$data ['nama'].'</td>
+                                                    <td>'.$data ['gender'].'</td>
                                                     <td>'.$data ['noreg'].'</td>
                                                     <td>10</td>
                                                     <td>'.$tgl_keluar.'</td>
                                                     <td>'.$data ['ruangan'].'</td>
-                                                    <td>'.$data ['nama_dokter'].'</td>
+                                                    <td>'.$hasil_dokter ['nama'].'</td>
                                                     
                                                     <td>'.$data ['nama_pm'].'</td>
                                                     
