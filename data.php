@@ -49,7 +49,22 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title text-center">Data</h2>
+                            <div class="row justify justify-content-end">
+                                    <div class="col-sm-3">
+                                      <h2>Data</h2>
+                                    </div> 
+
+                                    <div class="col-sm-5 mt-2 ">
+                                        <a href="" class="tbl_print"><i class="fas fa-print" data-toggle="tooltip" title="print"></i></a>
+                                        <a href="" class="tbl_print"><i class="fas fa-download" data-toggle="tooltip" title="download"></i></a>
+                                       
+                                    </div>  
+                                </div>
+                                
+
+
+
+
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                         <thead>
@@ -93,8 +108,9 @@
                                                     <td>'.$data ['nama_pm'].'</td>
                                                     
                                                 <td>
-                                                    <a href="#"><i class="fas fa-edit"></i></a>
-                                                    <a href="#" class="tbl_eraser"><i class="fas fa-eraser"></i></a>
+                                                    <a href="#"><i class="fas fa-edit" data-toggle="tooltip" title="rincian"></i></a>
+                                                    <a href="#"><i class="fas fa-edit" data-toggle="tooltip" title="print"></i></a>
+                                                    <a href="#" class="tbl_eraser"><i class="fas fa-eraser" data-toggle="tooltip" title="print"></i></a>
                                                 </td>
                                                     </tr>
  

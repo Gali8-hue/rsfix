@@ -50,6 +50,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h2 class="card-title text-center">Input Ruangan</h2>
+                                
                                 <div class="table-responsive">
                                     <!-- <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                         <thead>
@@ -208,6 +209,11 @@
                     <input type="text" class="form-control mb-2 mr-sm-2 " id="Perawat" placeholder="Perawat" name="Perawat">
                 </div>  
             </div>
+            <div class="row ml-5">
+                <div class="col-sm-1">
+                  <button type="submit" class="btn btn-primary mt-3"> kirim</button>
+                </div>
+            </div>
 
             
 
@@ -222,7 +228,7 @@
 
 
 
-        <button type="submit" class="btn btn-primary mt-3"> kirim</button>
+        
     </form>
                                 </div>
                             </div>

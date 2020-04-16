@@ -40,7 +40,20 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title text-center">Data Paramedis</h2>
+                            <div class="row justify justify-content-end">
+                                    <div class="col-sm-3">
+                                      <h2>Data Ruangan</h2>
+                                    </div> 
+
+                                    <div class="col-sm-5 mt-2 ">
+                                        <a href="" class="tbl_print"><i class="fas fa-print" data-toggle="tooltip" title="print"></i></a>
+                                        <a href="" class="tbl_print"><i class="fas fa-download" data-toggle="tooltip" title="download"></i></a>
+                                       
+                                    </div>  
+                                </div>
+                                
+
+
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                         <thead>
