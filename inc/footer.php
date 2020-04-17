@@ -38,6 +38,10 @@
     <!--This page plugins -->
     <script src="assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="dist/js/pages/datatable/datatable-basic.init.js"></script>
+     <!--Morris JavaScript -->
+     <script src="assets/libs/raphael/raphael.min.js"></script>
+    <script src="assets/libs/morris.js/morris.min.js"></script>
+    <script src="dist/js/pages/morris/morris-data.js"></script>
 </body>
 
 </html>

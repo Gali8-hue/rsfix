@@ -1,5 +1,3 @@
-
-
 <?php require_once('inc/header.php'); ?>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->

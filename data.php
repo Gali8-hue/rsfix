@@ -49,37 +49,23 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                            <div class="row justify justify-content-end">
-                                    <div class="col-sm-3">
-                                      <h2>Data</h2>
-                                    </div> 
-
-                                    <div class="col-sm-5 mt-2 ">
-                                        <a href="" class="tbl_print"><i class="fas fa-print" data-toggle="tooltip" title="print"></i></a>
-                                        <a href="" class="tbl_print"><i class="fas fa-download" data-toggle="tooltip" title="download"></i></a>
-                                       
-                                    </div>  
-                                </div>
-                                
-
-
-
-
+                                <h2 class="card-title text-center">Data</h2>
                                 <div class="table-responsive">
+
                                     <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                         <thead>
                                             <tr>
                                                 
                                                 <th>No</th>
                                                 <th>Nama*</th>
-                                                <th>Gender*</th>
+                                                <th>Gender</th>
                                                 <th>No Reg*</th>                                             
                                                 <th>Lama Opname*</th>                                             
                                                 <th>Tgl Keluar*</th>                                             
                                                 <th>Ruang*</th>
-                                                <th>Nama Dokter</th>                                                                                                                      
-                                                <th>Nama PM</th>                                             
+                                                <th>Nama Dokter</th>                                         
                                                 <th>Aksi</th>                                             
+                                                                                      
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -90,30 +76,26 @@
                                                 $no =1;
 
                                                 while ($data = mysqli_fetch_array($hasil)) {
-                                                    // cek nama dokter 
+                                                    
+                                                    //visit nama dokter pertama
                                                     $tampung_dokter = $data['nama_dokter'];
                                                     $array_dokter = explode('-',$tampung_dokter);
-                                                    $nama_dokter ="";//menampung mama dokter
-
-                                                    for ($i=0; $i<4 ; $i++) {//iterasi untuk ambil visite dokter
-
-                                                        $id_dokter =$array_dokter[$i]; //id yg terpilih
-
-                                                        if ($id_dokter!='') {//jika id tidak kosong
-                                                        $query2 = "select * from dokter where id_dokter=$id_dokter";
-                                                        $hasil2 = mysqli_query($koneksi, $query);
-                                                        $hasil_dokter = mysqli_fetch_assoc($hasil2);
-                                                        $nama_dokter=$nama_dokter.', '.$hasil_dokter['nama'];
-                                                        }
-
-                                                    }
+                                                    $id_dokter = $array_dokter[0];
+                                                    
+                                                    $query2 = "SELECT * FROM dokter WHERE id_dokter=$id_dokter";
+                                                    $hasil2 = mysqli_query($koneksi, $query2);
+                                                    $hasil_dokter = mysqli_fetch_assoc($hasil2);
+                                                    
+                                                    $nama_dokter =$hasil_dokter['nama']; //menampung nama dokter
 
                                                     
+                                                    //selisih hari
+                                                    $keluar = new DateTime($data['tanggal_keluar']);
+                                                    $masuk = new DateTime($data['tanggal_masuk']);
+                                                    $lama = $keluar->diff($masuk)->days;
 
-                                                   
 
-
-
+                                                    // mengubah tampilan tanggal
                                                     $tgl_k=$data['tanggal_keluar'];
                                                     $tglK=explode('-',$tgl_k);
                                                     $tgl_keluar=$tglK[2].'-'.$tglK[1].'-'.$tglK[0];
@@ -126,20 +108,17 @@
                                                     <td>'.$data ['nama'].'</td>
                                                     <td>'.$data ['gender'].'</td>
                                                     <td>'.$data ['noreg'].'</td>
-                                                    <td>10</td>
+                                                    <td>'.$lama.'</td>P
                                                     <td>'.$tgl_keluar.'</td>
                                                     <td>'.$data ['ruangan'].'</td>
-                                                    <td>'.$hasil_dokter ['nama'].'</td>
-                                                    
-                                                    <td>'.$data ['nama_pm'].'</td>
+                                                    <td>'.$nama_dokter.'</td>
                                                     
                                                 <td>
-                                                    <a href="#"><i class="fas fa-ellipsis-h" data-toggle="tooltip" title="rincian"></i></a>
-                                                    
-
-                                                    <a href="#"><i class="fas fa-edit" data-toggle="tooltip" title="print"></i></a>
-                                                    <a href="#"><i class="fas fa-eraser" data-toggle="tooltip" title="print"></i></a>
+                                                <a href="rincian.php?id='.$data["id"].'"><i class="fas fa-ellipsis-h" data-toggle="tooltip" title="rincian"></i></a>
+                                                    <a href="edit_data.php"><i class="fas fa-edit" data-toggle="tooltip" title="edit"></i></a>
+                                                    <a href="hapus.php"?id='.$data["id"].'"><i class="fas fa-eraser"data-toggle="tooltip" title="hapus"></i></a>
                                                 </td>
+                                                
                                                     </tr>
  
                                                     ';
