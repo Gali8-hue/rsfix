@@ -103,12 +103,12 @@
                                                         $query2 = "select * from dokter where id_dokter=$id_dokter";
                                                         $hasil2 = mysqli_query($koneksi, $query);
                                                         $hasil_dokter = mysqli_fetch_assoc($hasil2);
-
+                                                        $nama_dokter=$nama_dokter.', '.$hasil_dokter['nama'];
                                                         }
 
                                                     }
 
-                                                    $id_dokter =$array_dokter[0];
+                                                    
 
                                                    
 
@@ -134,9 +134,11 @@
                                                     <td>'.$data ['nama_pm'].'</td>
                                                     
                                                 <td>
-                                                    <a href="#"><i class="fas fa-edit" data-toggle="tooltip" title="rincian"></i></a>
+                                                    <a href="#"><i class="fas fa-ellipsis-h" data-toggle="tooltip" title="rincian"></i></a>
+                                                    
+
                                                     <a href="#"><i class="fas fa-edit" data-toggle="tooltip" title="print"></i></a>
-                                                    <a href="#" class="tbl_eraser"><i class="fas fa-eraser" data-toggle="tooltip" title="print"></i></a>
+                                                    <a href="#"><i class="fas fa-eraser" data-toggle="tooltip" title="print"></i></a>
                                                 </td>
                                                     </tr>
  

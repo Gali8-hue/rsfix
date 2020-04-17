@@ -71,7 +71,7 @@
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Authentication</span></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="authentication-login1.html"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="login.php"
                                 aria-expanded="false"><i data-feather="lock" class="feather-icon"></i><span
                                     class="hide-menu">Login
                                 </span></a>

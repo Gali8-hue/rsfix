@@ -60,6 +60,46 @@
                     </div>
                 </div>
             </div>
+
+            <div class="gif" style="margin-left: 35%">
+                <img src="hospital.gif" alt=""> 
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_wdXBRc.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" hover   autoplay></lottie-player>
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_QR3oyU.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+            </div>
+
+
+            <!----------------------------------------------CHARTS--------------------------------------------------->
+            <div class="row">
+                    <!-- column -->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Product line Chart</h4>
+                                <ul class="list-inline text-right">
+                                    <li class="list-inline-item">
+                                        <h5><i class="fa fa-circle mr-1 text-info"></i>iPhone</h5>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <h5><i class="fa fa-circle mr-1 text-cyan"></i>iPod</h5>
+                                    </li>
+                                </ul>
+                                <div id="morris-area-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- column -->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Donute Chart</h4>
+                                <div id="morris-donut-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- column -->
             <!-- END ISI KONTEN 1 -->
             
         
