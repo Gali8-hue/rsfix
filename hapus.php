@@ -30,21 +30,35 @@
     $hapus = mysqli_query ($koneksi, $query) or die (mysqli_error($koneksi));
 
 
-    if ($hapus) {
-        echo "<script>
-                alert ('data berhasil dihapus!');
-                document.location.href = 'data_ruangan.php';
+        if ($hapus) {
+            echo "<script>
+                    alert ('data berhasil dihapus!');
+                    document.location.href = 'data_ruangan.php';
+                    </script>";
+        }else {
+            echo "<script>
+                    alert ('data gagal dihapus!');
+                    
                 </script>";
-    }else {
-        echo "<script>
-                 alert ('data gagal dihapus!');
-                
-             </script>";
 
+        }
+   }elseif  ($jenis == 'hapus_data') {
+
+    $id = $_GET['id'];
+    $query = "delete from data_pasien where id=$id";
+    $hapus = mysqli_query ($koneksi, $query) or die (mysqli_error($koneksi));
+
+
+        if ($hapus) {
+            echo "<script>
+                    alert ('data berhasil dihapus!');
+                    document.location.href = 'data.php';
+                    </script>";
+        }else {
+            echo "<script>
+                    alert ('data gagal dihapus!');
+                    
+                </script>";
+        }
     }
-    //tombol hapus data.php 
-
-}
-
 ?>
-<!--------------------------------Tombol Hapus Ruangan------------------------------------->

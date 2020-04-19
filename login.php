@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/ph.png">
+    <title>PUBLIC HOSPITAL</title>
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -38,15 +38,22 @@
         <!-- ============================================================== -->
         <!-- Login box.scss -->
         <!-- ============================================================== -->
+
+
+      
+        
+      
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
-        style:"background-image: url(assets/images/background/active-bg.png;">
-            <div class="auth-box row">
-                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(assets/images/big/hospital.gif);  border-radius: 10px 0 0 10px;">
-                </div>
-                <div class="col-lg-5 col-md-7 bg-white" style="background:darkcyan; border-radius: 0 10px 10px 0; ">
+             style="background-image: url(assets/images/background/active-bg.png);">
+             
+            <div class="auth-box row position-absolute">
+                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(assets/images/big/hospital.gif);  border-radius: 10px 0 0 10px; z-index:1;">
+                <img src="assets/images/public2.png" alt="" class="position-absolute; z-index:2;" style="margin-left: 90px;">    
+            </div>
+                <div class="col-lg-5 col-md-7 " style="background-color:rgb(143, 208, 216); border-radius: 0 10px 10px 0; ">
                     <div class="p-3">
                         <div class="text-center">
-                            <!-- <img src="assets/images/big/icon.png" alt="wrapkit"> -->
+                            
                         </div>
                         <h2 class="mt-3 text-center">Sign In</h2>
                         <p class="text-center">Enter your email address and password to access admin panel.</p>
@@ -56,14 +63,14 @@
                                     <div class="form-group">
                                         <label class="text-dark" for="uname">Username</label>
                                         <input class="form-control" id="uname" type="text"
-                                            placeholder="enter your username">
+                                            placeholder="enter your username" style="border-radius: 25px">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark" for="pwd">Password</label>
                                         <input class="form-control" id="pwd" type="password"
-                                            placeholder="enter your password">
+                                            placeholder="enter your password" style="border-radius: 25px">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">

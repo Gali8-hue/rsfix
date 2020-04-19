@@ -115,8 +115,8 @@
                                                     
                                                 <td>
                                                 <a href="rincian.php?id='.$data["id"].'"><i class="fas fa-ellipsis-h" data-toggle="tooltip" title="rincian"></i></a>
-                                                    <a href="edit_data.php"><i class="fas fa-edit" data-toggle="tooltip" title="edit"></i></a>
-                                                    <a href="hapus.php"?id='.$data["id"].'"><i class="fas fa-eraser"data-toggle="tooltip" title="hapus"></i></a>
+                                                    <a href="edit_data.php?id='.$data["id"].'"><i class="fas fa-edit" data-toggle="tooltip" title="edit"></i></a>
+                                                    <a href="hapus.php"?id='.$data["id"].'&jenis=hapus_data""><i class="fas fa-eraser"data-toggle="tooltip" title="hapus"></i></a>
                                                 </td>
                                                 
                                                     </tr>

@@ -59,8 +59,8 @@
                                         </div>
 
                                         <!-- Identitas form -->
-                            <input type="hidden" value="edit_ruangan" name="jenis">
-            <input type="hidden" value="<?php echo $data['nomor'] ?>" name="nomor">
+                                            <input type="hidden" value="edit_ruangan" name="jenis">
+                                            <input type="hidden" value="<?php echo $data['nomor'] ?>" name="nomor">
             <!--  -->
 
                                         <button type="submit" class="btn waves-effect waves-light btn-rounded btn-primary">Simpan</button>

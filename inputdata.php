@@ -68,6 +68,7 @@
             <div class="col mt-sm-1 ml-4">
                 <label for="Nama">Nama</label>
                  <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap" name="nama"> 
+                
                  <div class="checkbox ml-3">
                     <input type="radio" id="male" name="gender" value="L">
                     <label for="female">Laki-laki</label>  

@@ -7,7 +7,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <div class="navbar-brand">
+                    <div class="navbar-brand" style="padding: 10px 15px 10px 0px;">
                         <!-- Logo icon -->
                         <a href="index.html">
                             <b class="logo-icon">
@@ -18,9 +18,9 @@
                             </b>
                             <!--End Logo icon -->
                             <!-- Logo text -->
-                            <span class="logo-text">
+                            <span class="logo-text" >
                                 <!-- dark Logo text -->
-                                <img src="assets/images/newlogo.png" alt="homepage" class="dark-logo" />
+                                <img src="assets/images/public2.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo text -->
                                 <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
                             </span>

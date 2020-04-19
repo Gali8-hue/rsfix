@@ -62,11 +62,16 @@
              <!-- nama & no.reg -->
             <div class="col mt-sm-1 ml-4">
                 <label for="Nama">Nama</label>
-                 <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap" name="nama"> 
+                 <input type="text" class="form-control" id="nama"  name="nama" value="<?=$data["nama"]?>"> 
+                
+                 <!-- Identitas form -->
+                 <input type="hidden" value="edit_data" name="jenis">
+                 <input type="hidden" value="<?php echo $data['id'] ?>" name="id">
+
                  <div class="checkbox ml-3">
-                    <input type="radio" id="male" name="gender" value="L">
+                    <input type="radio" id="male" name="gender" value="L" >
                     <label for="female">Laki-laki</label>  
-                    <input type="radio" id="female" name="gender" value="P">
+                    <input type="radio" id="female" name="gender" value="P" >
                     <label for="female">Perempuan</label>
                        
                  </div>
@@ -74,7 +79,7 @@
             </div>
             <div class="col mt-sm-1 mr-4 ">
                 <label for="Nama"><No class="registrasi"></No>No.Registrasi</label>
-                <input type="text" class="form-control" id="nomor_reg" placeholder="Nomor" name="nomor_reg">
+                <input type="text" class="form-control" id="nomor_reg"  name="nomor_reg" value="<?=$data["noreg"]?>">
             </div>
         </div> 
           
@@ -83,8 +88,8 @@
             <div class="col-6 ml-2 ">
                 <div class="col mt-4">
                     <label for="date" class=" mb-2 mr-sm-2">Tanggal Masuk-Keluar </label>
-                    <input type="date" class="form-control mb-2 mr-sm-2" id="tanggal" placeholder="tgl masuk" name="tgl_masuk"> 
-                    <input type="date" class="form-control" id="tanggal" placeholder="tgl keluar" name="tgl_keluar"> 
+                    <input type="date" class="form-control mb-2 mr-sm-2" id="tanggal"  name="tgl_masuk" value="<?=$data["tanggal_masuk"]?>"> 
+                    <input type="date" class="form-control" id="tanggal" name="tgl_keluar" value="<?=$data["tanggal_keluar"]?>"> 
                 </div>
                 <div class="col">
                 </div>
@@ -92,7 +97,7 @@
 
             <div class="col mt-4 mr-4 ">
                 <label for="room">Ruangan</label>
-                    <select name="ruangan" id="" class="custom-select mb-3">
+                    <select name="ruangan" id="nomor" class="custom-select mb-3"  name="ruangan" value="<?=$data["ruangan"]?>">
                         <option value="pilih ruang">Pilih Ruangan</option>
                         <?php
                         $query = "select * from paramedis";
