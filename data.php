@@ -51,7 +51,6 @@
                             <div class="card-body">
                                 <h2 class="card-title text-center">Data</h2>
                                 <div class="table-responsive">
-
                                     <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                         <thead>
                                             <tr>
@@ -65,7 +64,7 @@
                                                 <th>Ruang*</th>
                                                 <th>Nama Dokter</th>                                         
                                                 <th>Aksi</th>                                             
-                                                                                      
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -108,7 +107,7 @@
                                                     <td>'.$data ['nama'].'</td>
                                                     <td>'.$data ['gender'].'</td>
                                                     <td>'.$data ['noreg'].'</td>
-                                                    <td>'.$lama.'</td>P
+                                                    <td>'.$lama.'</td>
                                                     <td>'.$tgl_keluar.'</td>
                                                     <td>'.$data ['ruangan'].'</td>
                                                     <td>'.$nama_dokter.'</td>
